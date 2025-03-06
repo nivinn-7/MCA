@@ -64,3 +64,15 @@ class StudController extends Controller
     }
 }
 
+
+
+    public function sendEmail()
+{
+    Mail::raw('This is a test email using raw function.', function ($message) {
+        $message->to('recipient@example.com')
+                ->subject('Test Email');
+    });
+
+    return "Email sent successfully!";
+}
+
